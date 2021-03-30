@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyStory</string>
+    <string name="supporting_text">Supporting stuff!</string>
+    <string name="secondary_text">Secondary stuff!</string>
+    <string name="title">Title!</string>
+</resources>
