@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/story_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/addimage"
+        android:scaleType="centerInside"
+        android:onClick="selectPicture"
+        android:contentDescription="@string/practice" />
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/read_button"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/read_story"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:background="@color/gray"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/listen_button"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:text="@string/listen_to_story"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>
+<!--
+    </LinearLayout>
+    -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

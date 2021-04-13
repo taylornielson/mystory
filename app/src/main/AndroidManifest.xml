@@ -21,8 +21,19 @@
             android:name="com.example.mystory.AddStoryActivity"
             android:label="MyStory">
         </activity>
+        <activity android:name="com.example.mystory.CompletedStoryActivity"
+            android:label="MyStory">
+
+        </activity>
+        <activity android:name=".ListenActivity" />
+        <activity android:name=".ReadActivity"/>
 
     </application>
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 
 </manifest>

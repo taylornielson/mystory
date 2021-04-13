@@ -3,4 +3,12 @@
     <string name="supporting_text">Supporting stuff!</string>
     <string name="secondary_text">Secondary stuff!</string>
     <string name="title">Title!</string>
+    <string name="read_story">Read Story</string>
+    <string name="listen_to_story">Listen To Story</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="upload_from_camera_roll">Upload from Camera Roll</string>
+    <string name="click_to_add_picture">click to add picture</string>
+    <string name="practice">practice</string>
+    <string name="_0_00">0:00</string>
+    <string name="_5_00">5:00</string>
 </resources>
