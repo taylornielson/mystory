@@ -26,20 +26,35 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/TitleText"
+                    android:id="@+id/TitleTextAnswered"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
                     android:textSize="40dp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:layout_marginBottom="30dp"
                     />
-                <Button
-                    android:paddingVertical="30dp"
-                    android:id="@+id/recordTransitionButton"
-                    android:layout_gravity="center"
-                    android:layout_width="300dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Answer Question"/>
+                    android:orientation="vertical">
+                    <Button
+                        android:paddingVertical="30dp"
+                        android:id="@+id/ReadButton"
+                        android:text="Read Story"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+                    </Button>
+
+                    <Button
+                        android:paddingVertical="30dp"
+                        android:id="@+id/ListenButton"
+                        android:text="Listen to Story"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+                    </Button>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
