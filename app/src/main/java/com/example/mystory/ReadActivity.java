@@ -10,6 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class ReadActivity extends AppCompatActivity {
 
 
@@ -31,7 +36,27 @@ public class ReadActivity extends AppCompatActivity {
 
         TextView storyContent = findViewById(R.id.story);
         storyContent.setMovementMethod(new ScrollingMovementMethod());
-        storyContent.setText("this is my story. it's a fake story for right now but it will be real someday. Lorem ipsum dolor " +
+        String filePath = this.getExternalFilesDir("/").getAbsolutePath() + "/" + getIntent().getStringExtra("title") + "/" + getIntent().getStringExtra("title") + ".txt";
+        File file = new File(filePath);
+
+//Read text from file
+        StringBuilder text = new StringBuilder();
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+            }
+            br.close();
+        }
+        catch (IOException e) {
+            //You'll need to add proper error handling here
+        }
+        String fileText = text.toString();
+        /*storyContent.setText("this is my story. it's a fake story for right now but it will be real someday. Lorem ipsum dolor " +
                 "sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus " +
                 "gravida quis blandit turpis cursus in hac. Tincidunt tortor aliquam nulla facilisi. Iaculis urna id volutpat lacus " +
                 "laoreet non. At tellus at urna condimentum mattis pellentesque id nibh tortor. Velit laoreet id donec ultrices tincidunt " +
@@ -42,7 +67,8 @@ public class ReadActivity extends AppCompatActivity {
                 "mi sit amet mauris. Quis imperdiet massa tincidunt nunc pulvinar.ry for right now but it will be real someday. Lorem ipsum " +
                 "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunry for right now but it will be real someday. " +
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunry for right now but it will be real " +
-                "someday. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun");
+                "someday. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun");*/
+        storyContent.setText(fileText);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override

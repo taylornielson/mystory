@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,16 +58,15 @@ public class ListenActivity extends AppCompatActivity {
         handler = new Handler();
         if (player == null) {
             player = MediaPlayer.create(getApplicationContext(), R.raw.sample4);
-            /*
-            String filePath = Environment.getExternalStorageDirectory()+"/folder/filename.mp3";
+            String filePath = this.getExternalFilesDir("/").getAbsolutePath() + "/" + getIntent().getStringExtra("title") + "/" + getIntent().getStringExtra("title") + ".opus";
             player = new MediaPlayer();
             try {
                 player.setDataSource(filePath);
             } catch (IOException e) {
                 new Toast(this.getApplicationContext()).makeText(this.getApplicationContext(),"Unable to find audiofile", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
-                Intent intent = new Intent(ListenActivity.this, MainActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(ListenActivity.this, MainActivity.class);
+                startActivity(intent1);
 
             }
             try {
@@ -74,10 +74,10 @@ public class ListenActivity extends AppCompatActivity {
             } catch (IOException e) {
                 new Toast(this.getApplicationContext()).makeText(this.getApplicationContext(),"Unable to prepare audiofile", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
-                Intent intent = new Intent(ListenActivity.this, MainActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(ListenActivity.this, MainActivity.class);
+                startActivity(intent2);
             }
-            */
+
         }
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
         player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

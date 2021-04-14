@@ -24,10 +24,12 @@ public class ViewStoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addstory);
         ArrayList<String> questions = new ArrayList<>();
-        questions.add("Tell Me About Your Wedding Day");
+        questions.add("What were you like as a student?");
+        questions.add("What was your wedding day like?");
         questions.add("When is a Time You Feared For Your Life?");
         questions.add("When is a Time that you were spontaneous?");
         questions.add("What was your favorite family tradition?");
+        questions.add("What did you do for fun when you were younger?");
 
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.questionListRecycler);
@@ -79,19 +81,17 @@ public class ViewStoryActivity extends AppCompatActivity {
                 listenButton.setOnClickListener( new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        System.out.println("Listen Page");
-//                        Intent intent = new Intent(getApplicationContext(), RecordStoryActivity.class);
-//                        intent.putExtra("question", myTextView.getText());
-//                        startActivity(intent);
+                        Intent intent = new Intent(getApplicationContext(), ListenActivity.class);
+                        intent.putExtra("title", myTextView.getText());
+                        startActivity(intent);
                     }
                 });
                 readButton.setOnClickListener( new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        System.out.println("Read Page");
-//                        Intent intent = new Intent(getApplicationContext(), RecordStoryActivity.class);
-//                        intent.putExtra("question", myTextView.getText());
-//                        startActivity(intent);
+                        Intent intent = new Intent(getApplicationContext(), ReadActivity.class);
+                        intent.putExtra("title", myTextView.getText());
+                        startActivity(intent);
                     }
                 });
             }
