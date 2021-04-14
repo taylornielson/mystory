@@ -1,10 +1,13 @@
 package com.example.mystory;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,15 +19,18 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     public Button questionListButton;
     public Button addQuestionButton;
-    public Button orderBookButton;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         questionListButton = findViewById(R.id.questionListButton);
         addQuestionButton = findViewById(R.id.addStoryButton);
+        Typeface typeface = getResources().getFont(R.font.comfortaa);
+        questionListButton.setTypeface(typeface);
+        addQuestionButton.setTypeface(typeface);
 
         questionListButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToQuestionList() {
-        new Toast(this.getApplicationContext()).makeText(this.getApplicationContext(),"Clicked on Question List", Toast.LENGTH_LONG).show();
+        Intent myIntent = new Intent(MainActivity.this, ViewStoryActivity.class);
+        MainActivity.this.startActivity(myIntent);
     }
 
     private void goToCustomQuestion() {

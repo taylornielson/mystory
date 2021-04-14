@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mystory">
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.microphone" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStory">
         <activity
+            android:theme="@style/Theme.MyStory"
             android:name="com.example.mystory.MainActivity"
             android:label="MyStory">
             <intent-filter>
@@ -18,16 +24,25 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/Theme.MyStory"
             android:name="com.example.mystory.AddStoryActivity"
             android:label="MyStory">
         </activity>
         <activity android:name="com.example.mystory.CompletedStoryActivity"
             android:label="MyStory">
-
         </activity>
         <activity android:name=".ListenActivity" />
         <activity android:name=".ReadActivity"/>
-
+        <activity
+            android:theme="@style/Theme.MyStory"
+            android:name="com.example.mystory.ViewStoryActivity"
+            android:label="MyStory">
+        </activity>
+        <activity
+            android:theme="@style/Theme.MyStory"
+            android:name="com.example.mystory.RecordStoryActivity"
+            android:label="MyStory">
+        </activity>
     </application>
 
     <uses-feature android:name="android.hardware.camera"

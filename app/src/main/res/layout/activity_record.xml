@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:MyStory="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/Questioncard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            MyStory:cardElevation="8dp">
+                    <!-- Title, secondary and supporting text -->
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:id="@+id/QuestionText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="44dp"
+                        android:layout_margin="8dp"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+        </com.google.android.material.card.MaterialCardView>
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/recordButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_mic_24"
+                android:background="@drawable/round_corner">
+            </ImageButton>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/RecordStatus"
+            android:gravity="center"
+            android:layout_below="@id/buttonLayout"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/recordingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32dp"
+                android:text="Paused">
+            </TextView>
+        </LinearLayout>
+        
+    
+    <Button
+        android:paddingVertical="20dp"
+        android:layout_below="@id/buttonLayout"
+        android:layout_marginTop="110dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/finishedButton"
+        android:layout_width="300dp"
+        android:textSize="28dp"
+        android:layout_height="wrap_content"
+        android:text="Finished Recording"
+        />
+    </RelativeLayout>
