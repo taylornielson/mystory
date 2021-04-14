@@ -28,9 +28,6 @@
             android:name="com.example.mystory.AddStoryActivity"
             android:label="MyStory">
         </activity>
-        <activity android:name="com.example.mystory.CompletedStoryActivity"
-            android:label="MyStory">
-        </activity>
         <activity android:name=".ListenActivity" />
         <activity android:name=".ReadActivity"/>
         <activity

@@ -57,25 +57,25 @@ public class ListenActivity extends AppCompatActivity {
 
         handler = new Handler();
         if (player == null) {
-            player = MediaPlayer.create(getApplicationContext(), R.raw.sample4);
+            //player = MediaPlayer.create(getApplicationContext(), R.raw.sample4);
             String filePath = this.getExternalFilesDir("/").getAbsolutePath() + "/" + getIntent().getStringExtra("title") + "/" + getIntent().getStringExtra("title") + ".opus";
             player = new MediaPlayer();
             try {
                 player.setDataSource(filePath);
             } catch (IOException e) {
                 new Toast(this.getApplicationContext()).makeText(this.getApplicationContext(),"Unable to find audiofile", Toast.LENGTH_LONG).show();
-                e.printStackTrace();
                 Intent intent1 = new Intent(ListenActivity.this, MainActivity.class);
                 startActivity(intent1);
+                e.printStackTrace();
 
             }
             try {
                 player.prepare();
             } catch (IOException e) {
                 new Toast(this.getApplicationContext()).makeText(this.getApplicationContext(),"Unable to prepare audiofile", Toast.LENGTH_LONG).show();
-                e.printStackTrace();
                 Intent intent2 = new Intent(ListenActivity.this, MainActivity.class);
                 startActivity(intent2);
+                e.printStackTrace();
             }
 
         }
